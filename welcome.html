@@ -53,7 +53,7 @@ h1 {
 
 .time {
     display: inline-block;
-    min-width: 37px;
+    /*min-width: 37px;*/
 }
 
 .colon {
@@ -69,13 +69,13 @@ h1 {
     font-family: 'Helvetica', sans-serif;
     font-size: 1.2em;
 }
-.greet{
+/*.greet{
     
     min-width: 162px;
-    /* padding-right: 30px; */
+    padding-right: 30px;
     font-family: 'Helvetica', sans-serif;
     font-size: 1.2em;
-}
+}*/
 
     </style>
 </head>
@@ -106,16 +106,16 @@ document.getElementById('date').innerHTML = today.toDateString();
 
 function clock() {
 var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
-var minutes = zeros(today.getMinutes());
+var hour = addZeros(twelveHour(today.getHours()));
+var minutes = addZeros(today.getMinutes());
 /*var seconds = zeros(today.getSeconds());*/
 if(twelveHour(today.getHours()) >12){
-    minutes +=" pm"
+    minutes +=" PM"
 }
 else{
-    minutes +=" am"
+    minutes +=" AM"
 }
-hrs = today.getHours();
+/*hrs = today.getHours();
 if (hrs < 12)
         greet = 'Good morning';
     else if (hrs >= 12 && hrs <= 17)
@@ -138,7 +138,7 @@ if (hour > 12) {
     return hour
 }
 }
-// adds zero infront of single digit number
+/*// adds zero infront of single digit number
 function zeros(num) {
 if (num < 10) {
     num = '0' + num
@@ -153,7 +153,7 @@ setTimeout(dateTime, 500);
 }
 
 dateTime()
-// END
+// END*/
 </script>
 
 </body>
