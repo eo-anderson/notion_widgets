@@ -10,7 +10,6 @@
         body {
     font-family: 'Helvetica', sans-serif;
     background-color: #fff;
-  height: 100vh;
 }
 
 .wrapper {
@@ -27,51 +26,37 @@ button::-moz-focus-inner {
 }
 
 #calendari {
-    margin: 20px 0;
-    position: relative;
-    overflow: hidden;
-    height: 310px;
-    width: 350px;
+    margin:  0 auto;
+    /* height: 330px; */
+    /* width: 350px; */
     font-size: 14px;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+    /* box-shadow: 0px 1px 4px rgba(0,0,0,0.4); */
 }
+	    
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 350px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     background-color: #fff;
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    transition: all 0.3s ease;
 }
-table.actiu {
-    transform: translateX(0px)top;
-}
-table.inactiu {
-    transition: all 0.3s 0.01s ease;
-}
-table.amagat-esquerra {
-    transform: translateX(-299px);
-}
-table.amagat-dreta {
-    transform: translateX(300px);
-}
+	    
 td,th {
     text-align: center;
     background-color: #fff;
 }
+	    
 th {
     padding: 10px;
 }
+	    
 tr:first-child th {
     font-size: 20px;
     font-weight: bold;
     border-left: none;
     border-top: none;
 }
+	    
 td:last-child, th:last-child {
   border-right: none;
 }
@@ -81,9 +66,9 @@ th {
     border-right: 1px solid rgba(0,0,0,0.1);
     background-color: #EBECED;
     color: #37352F;
-    text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
     font-weight: normal;
 }
+	    
 th .any {
     font-size: 12px;
     font-weight: normal;
@@ -91,13 +76,16 @@ th .any {
     text-shadow: none;
     color: rgba(0,0,0,0.4);
 }
+	    
 tr:nth-child(2) th {
     padding: 5px;
 }
+	    
 td {
     padding: 0;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+	    
 td>span {
     color: #555;
     padding: 10px;
@@ -109,23 +97,28 @@ td>span {
 td:nth-child(even)>span {
     background-color: rgba(0,0,0,0.02);
 }
+	    
 td:last-child>span,
 td:nth-child(6)>span {
     color: #9B9A97;
 }
+	    
 td.avui>span {
     font-weight: bold;
     background-color: #EBECED;
     color: #37352F;
     border: 2px solid rgba(0,0,0,0.1);
 }
+	    
 td.fora > span {
     opacity: 0.2;
 }
+	    
 td > span:hover {
     background: #EBECED;
     color: #37352F;
 }
+	    
 .boto-next, .boto-prev {
     background: rgba(0,0,0,0.1);
     color: #fff;
@@ -143,14 +136,27 @@ td > span:hover {
     position: absolute;
     top: 15px;
 }
-.boto-next { right: 10px; padding-left: 13px; }
-.boto-prev { left: 10px; padding-right: 13px;}
+	    
+.boto-next { 
+	right: 10px; padding-left: 13px;
+}
+	    
+.boto-prev {
+	left: 10px; padding-right: 13px;
+}
+	    
 .boto-next:hover,
 .boto-prev:hover {
     background: rgba(0,0,0,0.2);
 }
-button:hover { cursor: pointer; }
-button:focus { outline: none; }
+		
+button:hover {
+	cursor: pointer; 
+}
+		
+button:focus { 
+	outline: none; 
+}
 
 footer {
   text-align: center;
@@ -252,13 +258,14 @@ function calendari(widget, data)
 
     var boto_prev = document.createElement('button');
     boto_prev.className = 'boto-prev';
-    boto_prev.innerHTML = '&#9666;';
+    boto_prev.innerHTML = '&#9668;';
 
     var boto_next = document.createElement('button');
     boto_next.className = 'boto-next';
-    boto_next.innerHTML = '&#9656;';
+    boto_next.innerHTML = '&#9658;';
 
     titol.appendChild(boto_prev);
+	
     titol.appendChild(document.createElement('span')).innerHTML = 
         mesos[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
 
