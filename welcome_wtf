@@ -1,0 +1,97 @@
+<html> 
+<head>
+    <title>Greeting Message</title> 
+    
+    <style>
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                local("Segoe UI"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                local("Segoe UI Bold"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+            font-weight: 600;
+        }
+
+        #lbl {
+            font-family: 'Segoe UI', 'Helvetica', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #37352F;
+            padding: 5px;
+            text-align: center;
+            line-height: 1.5;
+            height:85%
+        }
+        
+        #date{
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        body{
+            background-color: #EBECED;
+        }
+    </style>
+</head>
+    
+    
+    
+<body>
+    <div id="lbl"></div>
+</body>
+
+    
+    
+<script>
+    var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+    var month = new Array();
+        month[0] = "January";
+        month[1] = "February";
+        month[2] = "March";
+        month[3] = "April";
+        month[4] = "May";
+        month[5] = "June";
+        month[6] = "July";
+        month[7] = "August";
+        month[8] = "September";
+        month[9] = "October";
+        month[10] = "November";
+        month[11] = "December";
+    
+    var today = new Date();
+    var hrs = today.getHours();
+    var dayOfWeek = weekday[today.getDay()];
+    var date = dayOfWeek + ", " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Good morning!';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good afternoon!';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good evening!';
+
+    document.getElementById('lbl').innerHTML =
+        `<div id="date"> It's ${date}</div>`;
+</script> 
+</html>
